@@ -1,0 +1,136 @@
+*{
+    padding: 0px;
+    cursor: default;
+}
+body{
+    background-image: linear-gradient(to right,red, orange);
+}
+#Calculate{
+    width: 300px;
+    height:fit-content;
+    top:50%;
+    left: 50%;
+    position: fixed;
+    background-color:darkmagenta;
+    display: block;
+    transform: translate(-50%,-50%);
+    border-radius: 5%;
+    padding: 10px;
+    color: white;
+}
+.mainu{
+    margin: 2px;
+    width: 45px;
+    height: 31px;
+    display: block;
+}
+.mainu > div{
+    display: block;
+    margin-left: 3px;
+    background-color: white;
+    height: 6px;
+    border-radius: 2px;
+}
+.o{
+    margin-top: 5px;
+    width: 35px;
+}
+.t{
+    margin-top: 3px;
+    width: 30px;
+}
+.th{
+    margin-top: 3px;
+    width: 35px;
+}
+.input{
+    width: 95%;
+    margin:-15px 5px 0px 5px;
+    padding: 5px;
+    text-align: right;
+    font-size: 1.7rem;
+    opacity: 0.9;
+    
+}
+.output{
+    width: 95%;
+    margin:0px 5px ;
+    padding: 5px;
+    text-align: right;
+    font-size: 2.6rem;
+    
+}
+.one,.two,.spec{
+    display: flex;
+    margin: 10px;
+    font-size: 2.2rem;
+}
+.four{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2rem;
+    border-radius: 20% ;
+    background-color: red;
+}
+.one > div ,.two >div{
+    width: 70px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0px 5px 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tone{
+    background-color: white;
+}
+.tone > div{
+    width: fit-content;
+    height: fit-content;
+    color: red;
+}
+.ttwo{
+    background-color: orange;
+}
+.ttwos{
+    background-color: none;
+}
+.ttwo > div{
+    width: fit-content;
+    height: fit-content;
+}
+.spec{
+    display: flex;
+    flex-direction: row;
+}
+.threespe{
+    display: flex;
+    flex-direction: row;
+}
+.threespe>div{
+    width: 55px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px 0px 10px;
+}
+.fourspe>div{
+    width: 70px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.light,.lights{
+    transition: 0.1s;
+}
+.light:hover{
+    box-shadow: 0 4px 16px 0 white;
+}
+.lights:hover{
+    box-shadow: 0 4px 16px 0 red;
+}

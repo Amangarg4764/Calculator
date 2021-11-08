@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web Calculator</title>
+        <meta name="viewport" content="width=device-width , initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="Style.css">
+        
+    </head>
+    <body>
+        <div id="Calculate">
+            <div class="mainu">
+                <div class="o"></div><div class="t"></div><div class="th"></div>
+            </div>
+            <div class="input">0</div>
+            <div class="output">0</div>
+            <div class="one">
+                <div class="tone light"><div class="nas">C</div></div>
+                <div class="ttwo light" onclick="updateString('%');"><div>%</div></div>
+                <div class="ttwo light" onclick="updateString('/');"><div>/</div></div>
+                <div class="ttwo light" onclick="updateString('*');"><div>x</div></div>
+            </div>
+            <div class="two">
+                <div class="ttwos light" onclick="updateString('1');"><div>1</div></div>
+                <div class="ttwos light" onclick="updateString('2');"><div>2</div></div>
+                <div class="ttwos light" onclick="updateString('3');"><div>3</div></div>
+                <div class="ttwo light" onclick="updateString('+');"><div>+</div></div>
+            </div>
+            <div class="two">
+                <div class="ttwos light" onclick="updateString('4');"><div>4</div></div>
+                <div class="ttwos light" onclick="updateString('5');"><div>5</div></div>
+                <div class="ttwos light" onclick="updateString('6');"><div>6</div></div>
+                <div class="ttwo light" onclick="updateString('-');"><div>-</div></div>
+            </div>
+            <div class="spec">
+                <div class="three">
+                    <div class="threespe">
+                        <div class="ttwos light" onclick="updateString('7');"><div>7</div></div>
+                        <div class="ttwos light" onclick="updateString('8');"><div>8</div></div>
+                        <div class="ttwos light" onclick="updateString('9');"><div>9</div></div>
+                    </div>
+                    <div class="threespe">
+                        <div class="ttwos light cl"><div><-</div></div>
+                        <div class="ttwos light" onclick="updateString('0');"><div>0</div></div>
+                        <div class="ttwos light" onclick="updateString('.');"><div>.</div></div>
+                    </div>
+                </div>
+                <div class="four lights">
+                    <div class="fourspe">
+                        <div>=</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="Script.js"></script>
+    </body>
+</html>

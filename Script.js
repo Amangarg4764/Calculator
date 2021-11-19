@@ -1,4 +1,5 @@
 var inputstr=$(".input").text();
+var flag=0;
 function check(){
     if(inputstr.length>20){
         $(".input").css("font-size", "1rem");
@@ -10,18 +11,19 @@ function check(){
     }
 }
 $(".nas").click(function(){               
-                inputstr='0';
-                $(".input").text(inputstr);
-                $(".output").text(inputstr);
-                var xp=$(".output").text();
-                if(xp.length>14){
-                    $(".output").css("overflow-x", "scroll");
-                }
-                else{
-                    $(".output").css("overflow-x", "hidden");
-                }
-                check();
-            });
+    inputstr='0';
+    flag=0;
+    $(".input").text(inputstr);
+    $(".output").text(inputstr);
+    var xp=$(".output").text();
+    if(xp.length>14){
+        $(".output").css("overflow-x", "scroll");
+    }
+    else{
+        $(".output").css("overflow-x", "hidden");
+    }
+    check();
+});
             $(".cl").click(function(){
                 
                 let len=inputstr.length;
@@ -30,6 +32,10 @@ $(".nas").click(function(){
                     $(".input").text(inputstr);
                 }
                 else{
+                    
+                    if(inputstr.slice(len-1,len)=='.'){
+                        flag=0;
+                    }
                     inputstr=inputstr.slice(0,len-1);
                     $(".input").text(inputstr);
                 }
@@ -63,18 +69,54 @@ $(".nas").click(function(){
                 else{
                     var arb=inputstr.slice(inputstr.length-1);
                     if(arb=='/' || arb=='*' || arb=='-' || arb=='+' || arb=='%'){
-                        if(val=='/' || val=='*' || val=='-' || val=='+' || val=='%'){
+                        if(val=='/' || val=='*' || val=='-' || val=='+' || val=='%'){               
+                            flag=0;
                             inputstr=inputstr.slice(0,inputstr.length-1)+val;
                             $(".input").text(inputstr);    
                         }
                         else{
+                            if(val=='.'&& flag==0){
+                                flag=1;
+                                inputstr+=val;
+                                $(".input").text(inputstr);    
+                            }
+                            else{
                             inputstr+=val;
-                            $(".input").text(inputstr);    
+                            $(".input").text(inputstr);}    
+                        }
+                        
+                        
+                    }
+                    else if(arb=='.'){
+                        if(val=='.'){
+                            inputstr=inputstr.slice(0,inputstr.length-1)+val;
+                            $(".input").text(inputstr);
+                        }
+                        else{
+                            inputstr+=val;
+                            $(".input").text(inputstr);
                         }
                     }
                     else{
-                        inputstr+=val;
-                        $(".input").text(inputstr);
+                        if(flag==1){
+                            if(val=='.'){
+                                $(".input").text(inputstr);
+                            }
+                            else{
+                                inputstr+=val;
+                                $(".input").text(inputstr);    
+                            }
+                        }
+                        else if(val=='.' && flag==0){
+                            flag=1;
+                            inputstr+=val;
+                            $(".input").text(inputstr);
+                        }
+                        
+                        else{
+                            inputstr+=val;
+                            $(".input").text(inputstr);
+                        }
                     }   
                 }
             }
